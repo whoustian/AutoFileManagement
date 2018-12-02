@@ -9,8 +9,6 @@ class Processor {
 	public static void main(String[] Args) {
 		try {
 			
-			System.out.println("plop");
-			
 			buildAllFiles("C:\\Users\\Will\\Desktop\\testDir");
 
 			printAllFiles();
