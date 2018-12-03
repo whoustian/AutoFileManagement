@@ -8,7 +8,7 @@ class Processor {
 
 	public static void main(String[] Args) {
 		try {
-			
+
 			buildAllFiles("C:\\Users\\Will\\Desktop\\testDir");
 
 			printAllFiles();
@@ -31,7 +31,7 @@ class Processor {
 		File folder = new File(dir);
 		if (folder.exists() && folder.isDirectory()) {
 			File arr[] = folder.listFiles();
-			recursivePrint(arr, 0, 0);
+			lookInside(arr, 0, 0);
 		}
 	}
 
@@ -44,7 +44,7 @@ class Processor {
 		}
 	}
 
-	public static void recursivePrint(File[] arr, int index, int level) {
+	public static void lookInside(File[] arr, int index, int level) {
 
 		if (index == arr.length) {
 			return;
@@ -61,10 +61,10 @@ class Processor {
 
 		} else if (arr[index].isDirectory()) {
 			System.out.println("[" + arr[index].getName() + "]");
-			recursivePrint(arr[index].listFiles(), 0, level + 1);
+			lookInside(arr[index].listFiles(), 0, level + 1);
 		}
 
-		recursivePrint(arr, ++index, level);
+		lookInside(arr, ++index, level);
 
 	}
 
